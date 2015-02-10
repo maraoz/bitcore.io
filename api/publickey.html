@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin API.</title>
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="http://bitcore.io/api/publickey.html">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -28,19 +28,17 @@
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
 
   <meta property="og:image" content="/css/images/lava-ball-social.png" />
-  <meta name="twitter:image" content="/css/images/lava-ball-social.png">
-  <meta name="twitter:image:width" content="200">
-  <meta name="twitter:image:height" content="200">
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
 
-  <meta name="description" content="A pure and powerful JavaScript Bitcoin API.">
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/api/publickey.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -80,6 +78,10 @@
               <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
             </li>
           
+            <li class="main-nav-item">
+              <a href="http://bitpaylabs.com" class="main-nav-link forum">Forum</a>
+            </li>
+          
         </ul>
       </nav>
     </div>
@@ -102,7 +104,7 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_PublicKey"><span class="toc-number">1.</span> <span class="toc-text">class: PublicKey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_PublicKey(data,_extra)"><span class="toc-number">1.1.</span> <span class="toc-text">new PublicKey(data, extra)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromDER"><span class="toc-number">1.2.</span> <span class="toc-text">PublicKey.fromDER</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toBuffer"><span class="toc-number">1.3.</span> <span class="toc-text">publicKey.toBuffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-_classifyArgs(data,_extra)"><span class="toc-number">1.4.</span> <span class="toc-text">publicKey._classifyArgs(data, extra)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromJSON(json)"><span class="toc-number">1.5.</span> <span class="toc-text">PublicKey.fromJSON(json)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromPrivateKey(privkey)"><span class="toc-number">1.6.</span> <span class="toc-text">PublicKey.fromPrivateKey(privkey)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromPoint(point,_[compressed])"><span class="toc-number">1.7.</span> <span class="toc-text">PublicKey.fromPoint(point, [compressed])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromString(str,_[encoding])"><span class="toc-number">1.8.</span> <span class="toc-text">PublicKey.fromString(str, [encoding])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromX(odd,_x)"><span class="toc-number">1.9.</span> <span class="toc-text">PublicKey.fromX(odd, x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-getValidationError(data,_[compressed])"><span class="toc-number">1.10.</span> <span class="toc-text">PublicKey.getValidationError(data, [compressed])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-isValid(data,_[compressed])"><span class="toc-number">1.11.</span> <span class="toc-text">PublicKey.isValid(data, [compressed])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toObject()"><span class="toc-number">1.12.</span> <span class="toc-text">publicKey.toObject()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toAddress()"><span class="toc-number">1.13.</span> <span class="toc-text">publicKey.toAddress()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toString()"><span class="toc-number">1.14.</span> <span class="toc-text">publicKey.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-inspect()"><span class="toc-number">1.15.</span> <span class="toc-text">publicKey.inspect()</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_PublicKey"><span class="toc-number">1.</span> <span class="toc-text">class: PublicKey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_PublicKey(data,_extra)"><span class="toc-number">1.1.</span> <span class="toc-text">new PublicKey(data, extra)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromDER"><span class="toc-number">1.2.</span> <span class="toc-text">PublicKey.fromDER</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toBuffer"><span class="toc-number">1.3.</span> <span class="toc-text">publicKey.toBuffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-_classifyArgs(data,_extra)"><span class="toc-number">1.4.</span> <span class="toc-text">publicKey._classifyArgs(data, extra)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromJSON(json)"><span class="toc-number">1.5.</span> <span class="toc-text">PublicKey.fromJSON(json)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromPrivateKey(privkey)"><span class="toc-number">1.6.</span> <span class="toc-text">PublicKey.fromPrivateKey(privkey)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromPoint(point,_[compressed])"><span class="toc-number">1.7.</span> <span class="toc-text">PublicKey.fromPoint(point, [compressed])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromString(str,_[encoding])"><span class="toc-number">1.8.</span> <span class="toc-text">PublicKey.fromString(str, [encoding])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-fromX(odd,_x)"><span class="toc-number">1.9.</span> <span class="toc-text">PublicKey.fromX(odd, x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-getValidationError(data,_[compressed])"><span class="toc-number">1.10.</span> <span class="toc-text">PublicKey.getValidationError(data, [compressed])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PublicKey-isValid(data,_[compressed])"><span class="toc-number">1.11.</span> <span class="toc-text">PublicKey.isValid(data, [compressed])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toObject()"><span class="toc-number">1.12.</span> <span class="toc-text">publicKey.toObject()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-_getID()"><span class="toc-number">1.13.</span> <span class="toc-text">publicKey._getID()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toAddress()"><span class="toc-number">1.14.</span> <span class="toc-text">publicKey.toAddress()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-toString()"><span class="toc-number">1.15.</span> <span class="toc-text">publicKey.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publicKey-inspect()"><span class="toc-number">1.16.</span> <span class="toc-text">publicKey.inspect()</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
         <p><a name="PublicKey"></a></p>
@@ -122,6 +124,7 @@
 <li><a href="#PublicKey.getValidationError">PublicKey.getValidationError(data, [compressed])</a></li>
 <li><a href="#PublicKey.isValid">PublicKey.isValid(data, [compressed])</a></li>
 <li><a href="#PublicKey#toObject">publicKey.toObject()</a></li>
+<li><a href="#PublicKey#_getID">publicKey._getID()</a></li>
 <li><a href="#PublicKey#toAddress">publicKey.toAddress()</a></li>
 <li><a href="#PublicKey#toString">publicKey.toString()</a></li>
 <li><a href="#PublicKey#inspect">publicKey.inspect()</a></li>
@@ -219,7 +222,10 @@
 </ul>
 <p><strong>Returns</strong>: <code>Boolean</code> - If the public key would be valid<br><a name="PublicKey#toObject"></a></p>
 <h2 id="publicKey-toObject()">publicKey.toObject()</h2>
-<p><strong>Returns</strong>: <code>Object</code> - A plain object of the PublicKey<br><a name="PublicKey#toAddress"></a></p>
+<p><strong>Returns</strong>: <code>Object</code> - A plain object of the PublicKey<br><a name="PublicKey#_getID"></a></p>
+<h2 id="publicKey-_getID()">publicKey._getID()</h2>
+<p>Will return a sha256 + ripemd160 hash of the serialized public key</p>
+<p><strong>Returns</strong>: <code>Buffer</code><br><a name="PublicKey#toAddress"></a></p>
 <h2 id="publicKey-toAddress()">publicKey.toAddress()</h2>
 <p>Will return an address for the public key</p>
 <p><strong>Returns</strong>: <code>Address</code> - An address generated from the public key<br><a name="PublicKey#toString"></a></p>
@@ -232,7 +238,7 @@
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-23T17:36:58.000Z" itemprop="dateModified">Last updated: Dec 23 2014</time>
+        <time id="page-footer-updated" datetime="2015-02-10T18:18:53.000Z" itemprop="dateModified">Last updated: Feb 10 2015</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
@@ -242,7 +248,7 @@
   
 
   
-    <strong class="sidebar-title">Main</strong>
+    <strong class="sidebar-title">Bitcore</strong>
     
       <a href="/api/address.html" class="sidebar-link">Address</a>
     
@@ -264,31 +270,47 @@
     
       <a href="/api/uri.html" class="sidebar-link">Uri</a>
     
-  
-    <strong class="sidebar-title">Crypto</strong>
-    
-      <a href="/api/crypto/point.html" class="sidebar-link">Point</a>
-    
-  
-    <strong class="sidebar-title">Script</strong>
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
     
       <a href="/api/script/script.html" class="sidebar-link">Script</a>
     
-  
-    <strong class="sidebar-title">Transaction</strong>
-    
       <a href="/api/transaction/transaction.html" class="sidebar-link">Transaction</a>
     
-      <a href="/api/transaction/sighash.html" class="sidebar-link">Sig Hash</a>
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
     
   
-    <strong class="sidebar-title">Transport</strong>
+    <strong class="sidebar-title">Peer-to-Peer</strong>
     
-      <a href="/api/transport/peer.html" class="sidebar-link">Peer</a>
+      <a href="/api/module/p2p/messages.html" class="sidebar-link">Messages</a>
     
-      <a href="/api/transport/pool.html" class="sidebar-link">Pool</a>
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
     
-      <a href="/api/transport/rpc.html" class="sidebar-link">RPC</a>
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
     
   
 
@@ -303,7 +325,7 @@
   <div class="outer">
     <div class="inner">
       <div id="footer-copyright">
-        <p>bitcore™ &copy; 2013-2014 BitPay, Inc. bitcore is released under the MIT license.</p>
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
       </div>
       <div id="footer-links">
         <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
@@ -312,6 +334,7 @@
     </div>
   </div>
 </footer>
+
   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/retina.min.js" type="text/javascript"></script>

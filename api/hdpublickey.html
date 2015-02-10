@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin API.</title>
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="http://bitcore.io/api/hdpublickey.html">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -28,19 +28,17 @@
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
 
   <meta property="og:image" content="/css/images/lava-ball-social.png" />
-  <meta name="twitter:image" content="/css/images/lava-ball-social.png">
-  <meta name="twitter:image:width" content="200">
-  <meta name="twitter:image:height" content="200">
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
 
-  <meta name="description" content="A pure and powerful JavaScript Bitcoin API.">
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/api/hdpublickey.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -80,6 +78,10 @@
               <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
             </li>
           
+            <li class="main-nav-item">
+              <a href="http://bitpaylabs.com" class="main-nav-link forum">Forum</a>
+            </li>
+          
         </ul>
       </nav>
     </div>
@@ -102,7 +104,7 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_HDPublicKey"><span class="toc-number">1.</span> <span class="toc-text">class: HDPublicKey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_HDPublicKey(arg)"><span class="toc-number">1.1.</span> <span class="toc-text">new HDPublicKey(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPublicKey-derive(arg,_hardened)"><span class="toc-number">1.2.</span> <span class="toc-text">hDPublicKey.derive(arg, hardened)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey-isValidSerialized(data,_network)"><span class="toc-number">1.3.</span> <span class="toc-text">HDPublicKey.isValidSerialized(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey-getSerializedError(data,_network)"><span class="toc-number">1.4.</span> <span class="toc-text">HDPublicKey.getSerializedError(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPublicKey-_buildFromBuffers(arg)"><span class="toc-number">1.5.</span> <span class="toc-text">hDPublicKey._buildFromBuffers(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPublicKey-toString()"><span class="toc-number">1.6.</span> <span class="toc-text">hDPublicKey.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPublicKey-inspect()"><span class="toc-number">1.7.</span> <span class="toc-text">hDPublicKey.inspect()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPublicKey-toObject()"><span class="toc-number">1.8.</span> <span class="toc-text">hDPublicKey.toObject()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPublicKey-toJSON()"><span class="toc-number">1.9.</span> <span class="toc-text">hDPublicKey.toJSON()</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_HDPublicKey"><span class="toc-number">1.</span> <span class="toc-text">class: HDPublicKey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_HDPublicKey(arg)"><span class="toc-number">1.1.</span> <span class="toc-text">new HDPublicKey(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey-isValidPath(arg)"><span class="toc-number">1.2.</span> <span class="toc-text">HDPublicKey.isValidPath(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-derive(arg)"><span class="toc-number">1.3.</span> <span class="toc-text">hdPublicKey.derive(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey-isValidSerialized(data,_network)"><span class="toc-number">1.4.</span> <span class="toc-text">HDPublicKey.isValidSerialized(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey-getSerializedError(data,_network)"><span class="toc-number">1.5.</span> <span class="toc-text">HDPublicKey.getSerializedError(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-_buildFromBuffers(arg)"><span class="toc-number">1.6.</span> <span class="toc-text">hdPublicKey._buildFromBuffers(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-toString()"><span class="toc-number">1.7.</span> <span class="toc-text">hdPublicKey.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-inspect()"><span class="toc-number">1.8.</span> <span class="toc-text">hdPublicKey.inspect()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-toObject()"><span class="toc-number">1.9.</span> <span class="toc-text">hdPublicKey.toObject()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-toJSON()"><span class="toc-number">1.10.</span> <span class="toc-text">hdPublicKey.toJSON()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey-fromBuffer(arg)"><span class="toc-number">1.11.</span> <span class="toc-text">HDPublicKey.fromBuffer(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPublicKey-toBuffer()"><span class="toc-number">1.12.</span> <span class="toc-text">hdPublicKey.toBuffer()</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
         <p><a name="HDPublicKey"></a></p>
@@ -111,14 +113,17 @@
 <ul>
 <li><a href="#HDPublicKey">class: HDPublicKey</a><ul>
 <li><a href="#new_HDPublicKey">new HDPublicKey(arg)</a></li>
-<li><a href="#HDPublicKey#derive">hDPublicKey.derive(arg, hardened)</a></li>
+<li><a href="#HDPublicKey.isValidPath">HDPublicKey.isValidPath(arg)</a></li>
+<li><a href="#HDPublicKey#derive">hdPublicKey.derive(arg)</a></li>
 <li><a href="#HDPublicKey.isValidSerialized">HDPublicKey.isValidSerialized(data, network)</a></li>
 <li><a href="#HDPublicKey.getSerializedError">HDPublicKey.getSerializedError(data, network)</a></li>
-<li><a href="#HDPublicKey#_buildFromBuffers">hDPublicKey._buildFromBuffers(arg)</a></li>
-<li><a href="#HDPublicKey#toString">hDPublicKey.toString()</a></li>
-<li><a href="#HDPublicKey#inspect">hDPublicKey.inspect()</a></li>
-<li><a href="#HDPublicKey#toObject">hDPublicKey.toObject()</a></li>
-<li><a href="#HDPublicKey#toJSON">hDPublicKey.toJSON()</a></li>
+<li><a href="#HDPublicKey#_buildFromBuffers">hdPublicKey._buildFromBuffers(arg)</a></li>
+<li><a href="#HDPublicKey#toString">hdPublicKey.toString()</a></li>
+<li><a href="#HDPublicKey#inspect">hdPublicKey.inspect()</a></li>
+<li><a href="#HDPublicKey#toObject">hdPublicKey.toObject()</a></li>
+<li><a href="#HDPublicKey#toJSON">hdPublicKey.toJSON()</a></li>
+<li><a href="#HDPublicKey.fromBuffer">HDPublicKey.fromBuffer(arg)</a></li>
+<li><a href="#HDPublicKey#toBuffer">hdPublicKey.toBuffer()</a></li>
 </ul>
 </li>
 </ul>
@@ -130,38 +135,44 @@
 <ul>
 <li>arg <code>Object</code> | <code>string</code> | <code>Buffer</code>  </li>
 </ul>
-<p><a name="HDPublicKey#derive"></a></p>
-<h2 id="hDPublicKey-derive(arg,_hardened)">hDPublicKey.derive(arg, hardened)</h2>
+<p><a name="HDPublicKey.isValidPath"></a></p>
+<h2 id="HDPublicKey-isValidPath(arg)">HDPublicKey.isValidPath(arg)</h2>
+<p>Verifies that a given path is valid.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>arg <code>string</code> | <code>number</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <code>boolean</code><br><a name="HDPublicKey#derive"></a></p>
+<h2 id="hdPublicKey-derive(arg)">hdPublicKey.derive(arg)</h2>
 <p>Get a derivated child based on a string or number.</p>
-<p>If the first argument is a string, it’s parsed as the full path of<br>derivation. Valid values for this argument include “m” (which returns the<br>same private key), “m/0/1/40/2/1000”.</p>
+<p>If the first argument is a string, it’s parsed as the full path of<br>derivation. Valid values for this argument include “m” (which returns the<br>same public key), “m/0/1/40/2/1000”.</p>
 <p>Note that hardened keys can’t be derived from a public extended key.</p>
 <p>If the first argument is a number, the child with that index will be<br>derived. See the example usage for clarification.</p>
 <p><strong>Params</strong></p>
 <ul>
 <li>arg <code>string</code> | <code>number</code>  </li>
-<li>hardened <code>boolean</code>  </li>
 </ul>
 <p><strong>Example</strong>  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parent = <span class="keyword">new</span> HDPublicKey(<span class="string">'xpub...'</span>);</div><div class="line"><span class="keyword">var</span> child_0_1_2 = parent.derive(<span class="number">0</span>).derive(<span class="number">1</span>).derive(<span class="number">2</span>);</div><div class="line"><span class="keyword">var</span> copy_of_child_0_1_2 = parent.derive(<span class="string">"m/0/1/2"</span>);</div><div class="line">assert(child_0_1_2.xprivkey === copy_of_child_0_1_2);</div></pre></td></tr></table></figure>
 
 <p><a name="HDPublicKey.isValidSerialized"></a></p>
 <h2 id="HDPublicKey-isValidSerialized(data,_network)">HDPublicKey.isValidSerialized(data, network)</h2>
-<p>Verifies that a given serialized private key in base58 with checksum format<br>is valid.</p>
+<p>Verifies that a given serialized public key in base58 with checksum format<br>is valid.</p>
 <p><strong>Params</strong></p>
 <ul>
-<li>data <code>string</code> | <code>Buffer</code> - the serialized private key  </li>
+<li>data <code>string</code> | <code>Buffer</code> - the serialized public key  </li>
 <li>network <code>string</code> | <code>Network</code> - optional, if present, checks that the<br>  network provided matches the network serialized.  </li>
 </ul>
 <p><strong>Returns</strong>: <code>boolean</code><br><a name="HDPublicKey.getSerializedError"></a></p>
 <h2 id="HDPublicKey-getSerializedError(data,_network)">HDPublicKey.getSerializedError(data, network)</h2>
-<p>Checks what’s the error that causes the validation of a serialized private key<br>in base58 with checksum to fail.</p>
+<p>Checks what’s the error that causes the validation of a serialized public key<br>in base58 with checksum to fail.</p>
 <p><strong>Params</strong></p>
 <ul>
-<li>data <code>string</code> | <code>Buffer</code> - the serialized private key  </li>
+<li>data <code>string</code> | <code>Buffer</code> - the serialized public key  </li>
 <li>network <code>string</code> | <code>Network</code> - optional, if present, checks that the<br>  network provided matches the network serialized.  </li>
 </ul>
 <p><strong>Returns</strong>: <code>errors</code> | <code>null</code><br><a name="HDPublicKey#_buildFromBuffers"></a></p>
-<h2 id="hDPublicKey-_buildFromBuffers(arg)">hDPublicKey._buildFromBuffers(arg)</h2>
+<h2 id="hdPublicKey-_buildFromBuffers(arg)">hdPublicKey._buildFromBuffers(arg)</h2>
 <p>Receives a object with buffers in all the properties and populates the<br>internal structure</p>
 <p><strong>Params</strong></p>
 <ul>
@@ -178,23 +189,33 @@
 </li>
 </ul>
 <p><strong>Returns</strong>: <a href="#HDPublicKey">HDPublicKey</a> - this<br><a name="HDPublicKey#toString"></a></p>
-<h2 id="hDPublicKey-toString()">hDPublicKey.toString()</h2>
+<h2 id="hdPublicKey-toString()">hdPublicKey.toString()</h2>
 <p>Returns the base58 checked representation of the public key</p>
 <p><strong>Returns</strong>: <code>string</code> - a string starting with “xpub…” in livenet<br><a name="HDPublicKey#inspect"></a></p>
-<h2 id="hDPublicKey-inspect()">hDPublicKey.inspect()</h2>
+<h2 id="hdPublicKey-inspect()">hdPublicKey.inspect()</h2>
 <p>Returns the console representation of this extended public key.</p>
 <p><strong>Returns</strong>:  - string<br><a name="HDPublicKey#toObject"></a></p>
-<h2 id="hDPublicKey-toObject()">hDPublicKey.toObject()</h2>
+<h2 id="hdPublicKey-toObject()">hdPublicKey.toObject()</h2>
 <p>Returns a plain javascript object with information to reconstruct a key.</p>
 <p>Fields are: <ul><br> <li> network: ‘livenet’ or ‘testnet’<br> </li><li> depth: a number from 0 to 255, the depth to the master extended key<br> </li><li> fingerPrint: a number of 32 bits taken from the hash of the public key<br> </li><li> fingerPrint: a number of 32 bits taken from the hash of this key’s<br> </li><li>     parent’s public key<br> </li><li> childIndex: index with which this key was derived<br> </li><li> chainCode: string in hexa encoding used for derivation<br> </li><li> publicKey: string, hexa encoded, in compressed key format<br> </li><li> checksum: BufferUtil.integerFromBuffer(this._buffers.checksum),<br> </li><li> xpubkey: the string with the base58 representation of this extended key<br> </li><li> checksum: the base58 checksum of xpubkey<br></li></ul></p>
 <p><a name="HDPublicKey#toJSON"></a></p>
-<h2 id="hDPublicKey-toJSON()">hDPublicKey.toJSON()</h2>
+<h2 id="hdPublicKey-toJSON()">hdPublicKey.toJSON()</h2>
 <p>Serializes this object into a JSON string</p>
-<p><strong>Returns</strong>: <code>string</code>  </p>
+<p><strong>Returns</strong>: <code>string</code><br><a name="HDPublicKey.fromBuffer"></a></p>
+<h2 id="HDPublicKey-fromBuffer(arg)">HDPublicKey.fromBuffer(arg)</h2>
+<p>Create a HDPublicKey from a buffer argument</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>arg <code>Buffer</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#HDPublicKey">HDPublicKey</a><br><a name="HDPublicKey#toBuffer"></a></p>
+<h2 id="hdPublicKey-toBuffer()">hdPublicKey.toBuffer()</h2>
+<p>Return a buffer representation of the xpubkey</p>
+<p><strong>Returns</strong>: <code>Buffer</code>  </p>
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-23T17:36:58.000Z" itemprop="dateModified">Last updated: Dec 23 2014</time>
+        <time id="page-footer-updated" datetime="2015-02-10T18:18:53.000Z" itemprop="dateModified">Last updated: Feb 10 2015</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
@@ -204,7 +225,7 @@
   
 
   
-    <strong class="sidebar-title">Main</strong>
+    <strong class="sidebar-title">Bitcore</strong>
     
       <a href="/api/address.html" class="sidebar-link">Address</a>
     
@@ -226,31 +247,47 @@
     
       <a href="/api/uri.html" class="sidebar-link">Uri</a>
     
-  
-    <strong class="sidebar-title">Crypto</strong>
-    
-      <a href="/api/crypto/point.html" class="sidebar-link">Point</a>
-    
-  
-    <strong class="sidebar-title">Script</strong>
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
     
       <a href="/api/script/script.html" class="sidebar-link">Script</a>
     
-  
-    <strong class="sidebar-title">Transaction</strong>
-    
       <a href="/api/transaction/transaction.html" class="sidebar-link">Transaction</a>
     
-      <a href="/api/transaction/sighash.html" class="sidebar-link">Sig Hash</a>
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
     
   
-    <strong class="sidebar-title">Transport</strong>
+    <strong class="sidebar-title">Peer-to-Peer</strong>
     
-      <a href="/api/transport/peer.html" class="sidebar-link">Peer</a>
+      <a href="/api/module/p2p/messages.html" class="sidebar-link">Messages</a>
     
-      <a href="/api/transport/pool.html" class="sidebar-link">Pool</a>
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
     
-      <a href="/api/transport/rpc.html" class="sidebar-link">RPC</a>
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
     
   
 
@@ -265,7 +302,7 @@
   <div class="outer">
     <div class="inner">
       <div id="footer-copyright">
-        <p>bitcore™ &copy; 2013-2014 BitPay, Inc. bitcore is released under the MIT license.</p>
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
       </div>
       <div id="footer-links">
         <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
@@ -274,6 +311,7 @@
     </div>
   </div>
 </footer>
+
   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/retina.min.js" type="text/javascript"></script>

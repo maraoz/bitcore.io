@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>HDKeys | Bitcore &mdash; A pure and powerful JavaScript Bitcoin API.</title>
+  <title>HDKeys | Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="http://bitcore.io/guide/hierarchical.html">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -28,9 +28,7 @@
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
 
   <meta property="og:image" content="/css/images/lava-ball-social.png" />
-  <meta name="twitter:image" content="/css/images/lava-ball-social.png">
-  <meta name="twitter:image:width" content="200">
-  <meta name="twitter:image:height" content="200">
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
 
   <meta name="description" content="Lets you create and derive extended public and private keys according to the BIP32 standard for Hierarchical Deterministic (HD) keys.">
 <meta property="og:type" content="website">
@@ -80,6 +78,10 @@
               <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
             </li>
           
+            <li class="main-nav-item">
+              <a href="http://bitpaylabs.com" class="main-nav-link forum">Forum</a>
+            </li>
+          
         </ul>
       </nav>
     </div>
@@ -92,7 +94,7 @@
         
         <h1 id="page-title" class="docs" itemprop="name">Documentation</h1>
         
-          <a href="https://github.com/bitpay/bitcore/blob/master/docs/guide/hierarchical.md" title="Improve this doc" id="page-edit-link"></a>
+          <a href="https://github.com/bitpay/bitcore/blob/master/docs/hierarchical.md" title="Improve this doc" id="page-edit-link"></a>
         
       </div>
     </div>
@@ -102,25 +104,25 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDKeys"><span class="toc-number">1.</span> <span class="toc-text">HDKeys</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hierarichically_Derived_Keys"><span class="toc-number">1.1.</span> <span class="toc-text">Hierarichically Derived Keys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey"><span class="toc-number">1.2.</span> <span class="toc-text">HDPrivateKey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey"><span class="toc-number">1.3.</span> <span class="toc-text">HDPublicKey</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDKeys"><span class="toc-number">1.</span> <span class="toc-text">HDKeys</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hierarchically_Derived_Keys"><span class="toc-number">1.1.</span> <span class="toc-text">Hierarchically Derived Keys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey"><span class="toc-number">1.2.</span> <span class="toc-text">HDPrivateKey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPublicKey"><span class="toc-number">1.3.</span> <span class="toc-text">HDPublicKey</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
         <h1 id="HDKeys">HDKeys</h1>
-<h2 id="Hierarichically_Derived_Keys">Hierarichically Derived Keys</h2>
-<p>Bitcore provides full support for <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" target="_blank" rel="external">BIP32</a>, allowing for many key management schemas that benefit from this property.  Please be sure to read and understand the basic concepts and the warnings on that BIP before using these classes.</p>
+<h2 id="Hierarchically_Derived_Keys">Hierarchically Derived Keys</h2>
+<p>Bitcore provides full support for <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" target="_blank" rel="external">BIP32</a>, allowing for many key management schemas that benefit from this property. Please be sure to read and understand the basic concepts and the warnings on that BIP before using these classes.</p>
 <h2 id="HDPrivateKey">HDPrivateKey</h2>
 <p>An instance of a <a href="privatekey.html">PrivateKey</a> that also contains information required to derive child keys.</p>
 <p>Sample usage:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> hdPrivateKey = <span class="keyword">new</span> HDPrivateKey();</div><div class="line"><span class="keyword">var</span> retrieved = <span class="keyword">new</span> HDPrivateKey(<span class="string">'xpriv...'</span>);</div><div class="line"><span class="keyword">var</span> derived = privateKey.derive(<span class="string">"m/0'"</span>);</div><div class="line"><span class="keyword">var</span> derivedByNumber = privateKey.derive(<span class="number">1</span>).derive(<span class="number">2</span>, <span class="literal">true</span>);</div><div class="line"><span class="keyword">var</span> derivedByArgument = privateKey.derive(<span class="string">"m/1/2'"</span>);</div><div class="line">assert(derivedByNumber.xprivkey === derivedByArgument.xprivkey);</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> Address(privateKey.publicKey, Networks.livenet);</div><div class="line"><span class="keyword">var</span> redeem = <span class="keyword">new</span> Transaction().from(output).to(target, <span class="number">10000</span>).sign(derived.privateKey);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> hdPrivateKey = <span class="keyword">new</span> HDPrivateKey();</div><div class="line"><span class="keyword">var</span> retrieved = <span class="keyword">new</span> HDPrivateKey(<span class="string">'xpriv...'</span>);</div><div class="line"><span class="keyword">var</span> derived = privateKey.derive(<span class="string">"m/0'"</span>);</div><div class="line"><span class="keyword">var</span> derivedByNumber = hdPrivateKey.derive(<span class="number">1</span>).derive(<span class="number">2</span>, <span class="literal">true</span>);</div><div class="line"><span class="keyword">var</span> derivedByArgument = hdPrivateKey.derive(<span class="string">"m/1/2'"</span>);</div><div class="line">assert(derivedByNumber.xprivkey === derivedByArgument.xprivkey);</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> Address(privateKey.publicKey, Networks.livenet);</div><div class="line"><span class="keyword">var</span> redeem = <span class="keyword">new</span> Transaction().from(output).to(target, <span class="number">10000</span>).sign(derived.privateKey);</div><div class="line"></div><div class="line"><span class="comment">// obtain HDPublicKey</span></div><div class="line"><span class="keyword">var</span> hdPublicKey = hdPrivateKey.hdPublicKey;</div></pre></td></tr></table></figure>
 
 <h2 id="HDPublicKey">HDPublicKey</h2>
 <p>An instance of a PublicKey that can be derived to build extended public keys. Note that hardened paths are not available when deriving an HDPublicKey.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> hdPrivateKey = <span class="keyword">new</span> HDPrivateKey();</div><div class="line"><span class="keyword">var</span> hdPublicKey = privateKey.hdPublicKey;</div><div class="line"><span class="keyword">try</span> {</div><div class="line">  <span class="keyword">new</span> HDPublicKey();</div><div class="line">} <span class="keyword">catch</span>(e) {</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Can't generate a public key without a private key"</span>);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> Address(hdPublicKey.publicKey, Networks.livenet);</div><div class="line"><span class="keyword">var</span> derivedAddress = <span class="keyword">new</span> Address(hdPublicKey.derive(<span class="number">100</span>).publicKey, Networks.testnet);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> hdPrivateKey = <span class="keyword">new</span> HDPrivateKey();</div><div class="line"><span class="keyword">var</span> hdPublicKey = hdPrivateKey.hdPublicKey;</div><div class="line"><span class="keyword">try</span> {</div><div class="line">  <span class="keyword">new</span> HDPublicKey();</div><div class="line">} <span class="keyword">catch</span>(e) {</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Can't generate a public key without a private key"</span>);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> Address(hdPublicKey.publicKey, Networks.livenet);</div><div class="line"><span class="keyword">var</span> derivedAddress = <span class="keyword">new</span> Address(hdPublicKey.derive(<span class="number">100</span>).publicKey, Networks.testnet);</div></pre></td></tr></table></figure>
 
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-23T17:36:57.000Z" itemprop="dateModified">Last updated: Dec 23 2014</time>
+        <time id="page-footer-updated" datetime="2015-02-10T18:18:50.000Z" itemprop="dateModified">Last updated: Feb 10 2015</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
@@ -137,13 +139,21 @@
       <a href="/guide/contributing.html" class="sidebar-link">Contributing</a>
     
   
-    <strong class="sidebar-title">Models</strong>
+    <strong class="sidebar-title">Bitcore</strong>
     
       <a href="/guide/address.html" class="sidebar-link">Address</a>
     
       <a href="/guide/block.html" class="sidebar-link">Block</a>
     
-      <a href="/guide/hierarchical.html" class="sidebar-link current">Hierarchical</a>
+      <a href="/guide/browser.html" class="sidebar-link">Browser</a>
+    
+      <a href="/guide/crypto.html" class="sidebar-link">Crypto</a>
+    
+      <a href="/guide/encoding.html" class="sidebar-link">Encoding</a>
+    
+      <a href="/guide/hierarchical.html" class="sidebar-link current">HD Keys</a>
+    
+      <a href="/guide/networks.html" class="sidebar-link">Networks</a>
     
       <a href="/guide/privatekey.html" class="sidebar-link">Private Key</a>
     
@@ -153,31 +163,47 @@
     
       <a href="/guide/transaction.html" class="sidebar-link">Transaction</a>
     
-  
-    <strong class="sidebar-title">Helpers</strong>
-    
-      <a href="/guide/crypto.html" class="sidebar-link">Crypto</a>
-    
-      <a href="/guide/ecies.html" class="sidebar-link">ECIES</a>
-    
-      <a href="/guide/encoding.html" class="sidebar-link">Encoding</a>
-    
-      <a href="/guide/networks.html" class="sidebar-link">Networks</a>
-    
-      <a href="/guide/paymentprotocol.html" class="sidebar-link">Payment Protocol</a>
-    
       <a href="/guide/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/guide/unspentoutput.html" class="sidebar-link">Unspent Output</a>
     
       <a href="/guide/uri.html" class="sidebar-link">URI</a>
     
   
-    <strong class="sidebar-title">Networking</strong>
+    <strong class="sidebar-title">Payment Protocol</strong>
     
-      <a href="/guide/jsonrpc.html" class="sidebar-link">JSON-RPC</a>
+      <a href="/guide/module/payment-protocol/index.html" class="sidebar-link">Getting Started</a>
     
-      <a href="/guide/peer.html" class="sidebar-link">Peer</a>
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
     
-      <a href="/guide/pool.html" class="sidebar-link">Pool</a>
+      <a href="/guide/module/p2p/index.html" class="sidebar-link">Getting Started</a>
+    
+      <a href="/guide/module/p2p/messages.html" class="sidebar-link">Messages</a>
+    
+      <a href="/guide/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/guide/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/guide/module/mnemonic/index.html" class="sidebar-link">Getting Started</a>
+    
+  
+    <strong class="sidebar-title">ECIES</strong>
+    
+      <a href="/guide/module/ecies/index.html" class="sidebar-link">Getting Started</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/guide/module/channel/index.html" class="sidebar-link">Getting Started</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/guide/module/explorers/index.html" class="sidebar-link">Getting Started</a>
     
   
 
@@ -192,7 +218,7 @@
   <div class="outer">
     <div class="inner">
       <div id="footer-copyright">
-        <p>bitcore™ &copy; 2013-2014 BitPay, Inc. bitcore is released under the MIT license.</p>
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
       </div>
       <div id="footer-links">
         <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
@@ -201,6 +227,7 @@
     </div>
   </div>
 </footer>
+
   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/retina.min.js" type="text/javascript"></script>

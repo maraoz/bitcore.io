@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin API.</title>
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="http://bitcore.io/api/encoding/varint.html">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -28,19 +28,17 @@
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
 
   <meta property="og:image" content="/css/images/lava-ball-social.png" />
-  <meta name="twitter:image" content="/css/images/lava-ball-social.png">
-  <meta name="twitter:image:width" content="200">
-  <meta name="twitter:image:height" content="200">
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
 
-  <meta name="description" content="A pure and powerful JavaScript Bitcoin API.">
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/api/encoding/varint.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -80,6 +78,10 @@
               <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
             </li>
           
+            <li class="main-nav-item">
+              <a href="http://bitpaylabs.com" class="main-nav-link forum">Forum</a>
+            </li>
+          
         </ul>
       </nav>
     </div>
@@ -108,7 +110,7 @@
         
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-23T17:36:58.000Z" itemprop="dateModified">Last updated: Dec 23 2014</time>
+        <time id="page-footer-updated" datetime="2015-02-10T18:18:51.000Z" itemprop="dateModified">Last updated: Feb 10 2015</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
@@ -118,7 +120,7 @@
   
 
   
-    <strong class="sidebar-title">Main</strong>
+    <strong class="sidebar-title">Bitcore</strong>
     
       <a href="/api/address.html" class="sidebar-link">Address</a>
     
@@ -140,31 +142,47 @@
     
       <a href="/api/uri.html" class="sidebar-link">Uri</a>
     
-  
-    <strong class="sidebar-title">Crypto</strong>
-    
-      <a href="/api/crypto/point.html" class="sidebar-link">Point</a>
-    
-  
-    <strong class="sidebar-title">Script</strong>
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
     
       <a href="/api/script/script.html" class="sidebar-link">Script</a>
     
-  
-    <strong class="sidebar-title">Transaction</strong>
-    
       <a href="/api/transaction/transaction.html" class="sidebar-link">Transaction</a>
     
-      <a href="/api/transaction/sighash.html" class="sidebar-link">Sig Hash</a>
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
     
   
-    <strong class="sidebar-title">Transport</strong>
+    <strong class="sidebar-title">Peer-to-Peer</strong>
     
-      <a href="/api/transport/peer.html" class="sidebar-link">Peer</a>
+      <a href="/api/module/p2p/messages.html" class="sidebar-link">Messages</a>
     
-      <a href="/api/transport/pool.html" class="sidebar-link">Pool</a>
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
     
-      <a href="/api/transport/rpc.html" class="sidebar-link">RPC</a>
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
     
   
 
@@ -179,7 +197,7 @@
   <div class="outer">
     <div class="inner">
       <div id="footer-copyright">
-        <p>bitcore™ &copy; 2013-2014 BitPay, Inc. bitcore is released under the MIT license.</p>
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
       </div>
       <div id="footer-links">
         <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
@@ -188,6 +206,7 @@
     </div>
   </div>
 </footer>
+
   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/retina.min.js" type="text/javascript"></script>

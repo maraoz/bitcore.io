@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin API.</title>
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="http://bitcore.io/api/hdprivatekey.html">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -28,19 +28,17 @@
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
 
   <meta property="og:image" content="/css/images/lava-ball-social.png" />
-  <meta name="twitter:image" content="/css/images/lava-ball-social.png">
-  <meta name="twitter:image:width" content="200">
-  <meta name="twitter:image:height" content="200">
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
 
-  <meta name="description" content="A pure and powerful JavaScript Bitcoin API.">
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/api/hdprivatekey.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin API.">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -80,6 +78,10 @@
               <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
             </li>
           
+            <li class="main-nav-item">
+              <a href="http://bitpaylabs.com" class="main-nav-link forum">Forum</a>
+            </li>
+          
         </ul>
       </nav>
     </div>
@@ -102,7 +104,7 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_HDPrivateKey"><span class="toc-number">1.</span> <span class="toc-text">class: HDPrivateKey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_HDPrivateKey(arg)"><span class="toc-number">1.1.</span> <span class="toc-text">new HDPrivateKey(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPrivateKey-derive(arg,_hardened)"><span class="toc-number">1.2.</span> <span class="toc-text">hDPrivateKey.derive(arg, hardened)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-isValidSerialized(data,_network)"><span class="toc-number">1.3.</span> <span class="toc-text">HDPrivateKey.isValidSerialized(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-getSerializedError(data,_network)"><span class="toc-number">1.4.</span> <span class="toc-text">HDPrivateKey.getSerializedError(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-fromSeed(hexa,_network)"><span class="toc-number">1.5.</span> <span class="toc-text">HDPrivateKey.fromSeed(hexa, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPrivateKey-_buildFromBuffers(arg)"><span class="toc-number">1.6.</span> <span class="toc-text">hDPrivateKey._buildFromBuffers(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPrivateKey-toString()"><span class="toc-number">1.7.</span> <span class="toc-text">hDPrivateKey.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPrivateKey-inspect()"><span class="toc-number">1.8.</span> <span class="toc-text">hDPrivateKey.inspect()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hDPrivateKey-toObject()"><span class="toc-number">1.9.</span> <span class="toc-text">hDPrivateKey.toObject()</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_HDPrivateKey"><span class="toc-number">1.</span> <span class="toc-text">class: HDPrivateKey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_HDPrivateKey(arg)"><span class="toc-number">1.1.</span> <span class="toc-text">new HDPrivateKey(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-isValidPath(arg,_hardened)"><span class="toc-number">1.2.</span> <span class="toc-text">HDPrivateKey.isValidPath(arg, hardened)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-_getDerivationIndexes(path)"><span class="toc-number">1.3.</span> <span class="toc-text">HDPrivateKey._getDerivationIndexes(path)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-derive(arg,_hardened)"><span class="toc-number">1.4.</span> <span class="toc-text">hdPrivateKey.derive(arg, hardened)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-isValidSerialized(data,_network)"><span class="toc-number">1.5.</span> <span class="toc-text">HDPrivateKey.isValidSerialized(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-getSerializedError(data,_network)"><span class="toc-number">1.6.</span> <span class="toc-text">HDPrivateKey.getSerializedError(data, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-fromSeed(hexa,_network)"><span class="toc-number">1.7.</span> <span class="toc-text">HDPrivateKey.fromSeed(hexa, network)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-_buildFromBuffers(arg)"><span class="toc-number">1.8.</span> <span class="toc-text">hdPrivateKey._buildFromBuffers(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-toString()"><span class="toc-number">1.9.</span> <span class="toc-text">hdPrivateKey.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-inspect()"><span class="toc-number">1.10.</span> <span class="toc-text">hdPrivateKey.inspect()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-toObject()"><span class="toc-number">1.11.</span> <span class="toc-text">hdPrivateKey.toObject()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-toJSON()"><span class="toc-number">1.12.</span> <span class="toc-text">hdPrivateKey.toJSON()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDPrivateKey-fromBuffer(arg)"><span class="toc-number">1.13.</span> <span class="toc-text">HDPrivateKey.fromBuffer(arg)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdPrivateKey-toBuffer()"><span class="toc-number">1.14.</span> <span class="toc-text">hdPrivateKey.toBuffer()</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
         <p><a name="HDPrivateKey"></a></p>
@@ -111,14 +113,19 @@
 <ul>
 <li><a href="#HDPrivateKey">class: HDPrivateKey</a><ul>
 <li><a href="#new_HDPrivateKey">new HDPrivateKey(arg)</a></li>
-<li><a href="#HDPrivateKey#derive">hDPrivateKey.derive(arg, hardened)</a></li>
+<li><a href="#HDPrivateKey.isValidPath">HDPrivateKey.isValidPath(arg, hardened)</a></li>
+<li><a href="#HDPrivateKey._getDerivationIndexes">HDPrivateKey._getDerivationIndexes(path)</a></li>
+<li><a href="#HDPrivateKey#derive">hdPrivateKey.derive(arg, hardened)</a></li>
 <li><a href="#HDPrivateKey.isValidSerialized">HDPrivateKey.isValidSerialized(data, network)</a></li>
 <li><a href="#HDPrivateKey.getSerializedError">HDPrivateKey.getSerializedError(data, network)</a></li>
 <li><a href="#HDPrivateKey.fromSeed">HDPrivateKey.fromSeed(hexa, network)</a></li>
-<li><a href="#HDPrivateKey#_buildFromBuffers">hDPrivateKey._buildFromBuffers(arg)</a></li>
-<li><a href="#HDPrivateKey#toString">hDPrivateKey.toString()</a></li>
-<li><a href="#HDPrivateKey#inspect">hDPrivateKey.inspect()</a></li>
-<li><a href="#HDPrivateKey#toObject">hDPrivateKey.toObject()</a></li>
+<li><a href="#HDPrivateKey#_buildFromBuffers">hdPrivateKey._buildFromBuffers(arg)</a></li>
+<li><a href="#HDPrivateKey#toString">hdPrivateKey.toString()</a></li>
+<li><a href="#HDPrivateKey#inspect">hdPrivateKey.inspect()</a></li>
+<li><a href="#HDPrivateKey#toObject">hdPrivateKey.toObject()</a></li>
+<li><a href="#HDPrivateKey#toJSON">hdPrivateKey.toJSON()</a></li>
+<li><a href="#HDPrivateKey.fromBuffer">HDPrivateKey.fromBuffer(arg)</a></li>
+<li><a href="#HDPrivateKey#toBuffer">hdPrivateKey.toBuffer()</a></li>
 </ul>
 </li>
 </ul>
@@ -130,8 +137,23 @@
 <ul>
 <li>arg <code>string</code> | <code>Buffer</code> | <code>Object</code>  </li>
 </ul>
-<p><a name="HDPrivateKey#derive"></a></p>
-<h2 id="hDPrivateKey-derive(arg,_hardened)">hDPrivateKey.derive(arg, hardened)</h2>
+<p><a name="HDPrivateKey.isValidPath"></a></p>
+<h2 id="HDPrivateKey-isValidPath(arg,_hardened)">HDPrivateKey.isValidPath(arg, hardened)</h2>
+<p>Verifies that a given path is valid.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>arg <code>string</code> | <code>number</code>  </li>
+<li>hardened <code>boolean</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <code>boolean</code><br><a name="HDPrivateKey._getDerivationIndexes"></a></p>
+<h2 id="HDPrivateKey-_getDerivationIndexes(path)">HDPrivateKey._getDerivationIndexes(path)</h2>
+<p>Internal function that splits a string path into a derivation index array.<br>It will return null if the string path is malformed.<br>It does not validate if indexes are in bounds.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>path <code>string</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <code>Array</code><br><a name="HDPrivateKey#derive"></a></p>
+<h2 id="hdPrivateKey-derive(arg,_hardened)">hdPrivateKey.derive(arg, hardened)</h2>
 <p>Get a derivated child based on a string or number.</p>
 <p>If the first argument is a string, it’s parsed as the full path of<br>derivation. Valid values for this argument include “m” (which returns the<br>same private key), “m/0/1/40/2’/1000”, where the ‘ quote means a hardened<br>derivation.</p>
 <p>If the first argument is a number, the child with that index will be<br>derived. If the second argument is truthy, the hardened version will be<br>derived. See the example usage for clarification.</p>
@@ -168,7 +190,7 @@
 <li>network <code>*</code>  </li>
 </ul>
 <p><strong>Returns</strong>:  - HDPrivateKey<br><a name="HDPrivateKey#_buildFromBuffers"></a></p>
-<h2 id="hDPrivateKey-_buildFromBuffers(arg)">hDPrivateKey._buildFromBuffers(arg)</h2>
+<h2 id="hdPrivateKey-_buildFromBuffers(arg)">hdPrivateKey._buildFromBuffers(arg)</h2>
 <p>Receives a object with buffers in all the properties and populates the<br>internal structure</p>
 <p><strong>Params</strong></p>
 <ul>
@@ -185,13 +207,13 @@
 </li>
 </ul>
 <p><strong>Returns</strong>: <a href="#HDPrivateKey">HDPrivateKey</a> - this<br><a name="HDPrivateKey#toString"></a></p>
-<h2 id="hDPrivateKey-toString()">hDPrivateKey.toString()</h2>
+<h2 id="hdPrivateKey-toString()">hdPrivateKey.toString()</h2>
 <p>Returns the string representation of this private key (a string starting<br>with “xprv…”</p>
 <p><strong>Returns</strong>:  - string<br><a name="HDPrivateKey#inspect"></a></p>
-<h2 id="hDPrivateKey-inspect()">hDPrivateKey.inspect()</h2>
+<h2 id="hdPrivateKey-inspect()">hdPrivateKey.inspect()</h2>
 <p>Returns the console representation of this extended private key.</p>
 <p><strong>Returns</strong>:  - string<br><a name="HDPrivateKey#toObject"></a></p>
-<h2 id="hDPrivateKey-toObject()">hDPrivateKey.toObject()</h2>
+<h2 id="hdPrivateKey-toObject()">hdPrivateKey.toObject()</h2>
 <p>Returns a plain object with a representation of this private key.</p>
 <p>Fields include:<ul></ul></p>
 <p><li> network: either ‘livenet’ or ‘testnet’</li></p>
@@ -206,11 +228,24 @@
 <p><li> xprivkey: the representation of this extended private key in checksum</li></p>
 <p><li>     base58 format</li></p>
 <p><li> checksum: the base58 checksum of xprivkey<br></li></p>
-<p><strong>Returns</strong>: <code>Object</code>  </p>
+<p><strong>Returns</strong>: <code>Object</code><br><a name="HDPrivateKey#toJSON"></a></p>
+<h2 id="hdPrivateKey-toJSON()">hdPrivateKey.toJSON()</h2>
+<p>Returns a JSON representation of the HDPrivateKey</p>
+<p><strong>Returns</strong>: <code>string</code><br><a name="HDPrivateKey.fromBuffer"></a></p>
+<h2 id="HDPrivateKey-fromBuffer(arg)">HDPrivateKey.fromBuffer(arg)</h2>
+<p>Build a HDPrivateKey from a buffer</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>arg <code>Buffer</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#HDPrivateKey">HDPrivateKey</a><br><a name="HDPrivateKey#toBuffer"></a></p>
+<h2 id="hdPrivateKey-toBuffer()">hdPrivateKey.toBuffer()</h2>
+<p>Returns a buffer representation of the HDPrivateKey</p>
+<p><strong>Returns</strong>: <code>string</code>  </p>
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-23T17:36:58.000Z" itemprop="dateModified">Last updated: Dec 23 2014</time>
+        <time id="page-footer-updated" datetime="2015-02-10T18:18:51.000Z" itemprop="dateModified">Last updated: Feb 10 2015</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
@@ -220,7 +255,7 @@
   
 
   
-    <strong class="sidebar-title">Main</strong>
+    <strong class="sidebar-title">Bitcore</strong>
     
       <a href="/api/address.html" class="sidebar-link">Address</a>
     
@@ -242,31 +277,47 @@
     
       <a href="/api/uri.html" class="sidebar-link">Uri</a>
     
-  
-    <strong class="sidebar-title">Crypto</strong>
-    
-      <a href="/api/crypto/point.html" class="sidebar-link">Point</a>
-    
-  
-    <strong class="sidebar-title">Script</strong>
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
     
       <a href="/api/script/script.html" class="sidebar-link">Script</a>
     
-  
-    <strong class="sidebar-title">Transaction</strong>
-    
       <a href="/api/transaction/transaction.html" class="sidebar-link">Transaction</a>
     
-      <a href="/api/transaction/sighash.html" class="sidebar-link">Sig Hash</a>
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
     
   
-    <strong class="sidebar-title">Transport</strong>
+    <strong class="sidebar-title">Peer-to-Peer</strong>
     
-      <a href="/api/transport/peer.html" class="sidebar-link">Peer</a>
+      <a href="/api/module/p2p/messages.html" class="sidebar-link">Messages</a>
     
-      <a href="/api/transport/pool.html" class="sidebar-link">Pool</a>
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
     
-      <a href="/api/transport/rpc.html" class="sidebar-link">RPC</a>
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
     
   
 
@@ -281,7 +332,7 @@
   <div class="outer">
     <div class="inner">
       <div id="footer-copyright">
-        <p>bitcore™ &copy; 2013-2014 BitPay, Inc. bitcore is released under the MIT license.</p>
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
       </div>
       <div id="footer-links">
         <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
@@ -290,6 +341,7 @@
     </div>
   </div>
 </footer>
+
   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/retina.min.js" type="text/javascript"></script>
