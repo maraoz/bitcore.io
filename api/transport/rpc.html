@@ -104,13 +104,52 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_RPC"><span class="toc-number">1.</span> <span class="toc-text">class: RPC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_RPC(user,_password,_opts)"><span class="toc-number">1.1.</span> <span class="toc-text">new RPC(user, password, opts)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rPC-batch(batchCallback,_resultCallbak)"><span class="toc-number">1.2.</span> <span class="toc-text">rPC.batch(batchCallback, resultCallbak)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rPC-_request(request,_callbak)"><span class="toc-number">1.3.</span> <span class="toc-text">rPC._request(request, callbak)</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <html><head><meta http-equiv="refresh" content="0; url=/api/index.html"></head><body></body></html>
+        <p><a name="RPC"></a></p>
+<h1 id="class:_RPC">class: RPC</h1>
+<p><strong>Members</strong></p>
+<ul>
+<li><a href="#RPC">class: RPC</a><ul>
+<li><a href="#new_RPC">new RPC(user, password, opts)</a></li>
+<li><a href="#RPC#batch">rPC.batch(batchCallback, resultCallbak)</a></li>
+<li><a href="#RPC#_request">rPC._request(request, callbak)</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_RPC"></a></p>
+<h2 id="new_RPC(user,_password,_opts)">new RPC(user, password, opts)</h2>
+<p>A JSON RPC client for bitcoind. An instances of RPC connects to a bitcoind<br>server and enables simple and batch RPC calls.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>user <code>String</code> - username used to connect bitcoind  </li>
+<li>password <code>String</code> - password used to connect bitcoind  </li>
+<li>opts <code>Object</code> - Connection options: host, port, secure, disableAgent, rejectUnauthorized  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#RPC">RPC</a><br><strong>Example</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> client = <span class="keyword">new</span> RPC(<span class="string">'user'</span>, <span class="string">'pass'</span>);</div><div class="line">client.getInfo(<span class="function"><span class="keyword">function</span><span class="params">(err, info)</span> </span>{</div><div class="line">  <span class="comment">// do something with the info</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+<p><a name="RPC#batch"></a></p>
+<h2 id="rPC-batch(batchCallback,_resultCallbak)">rPC.batch(batchCallback, resultCallbak)</h2>
+<p>Allows to excecute RPC calls in batch.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>batchCallback <code>function</code> - Function that makes all calls to be excecuted in bach  </li>
+<li>resultCallbak <code>function</code> - Function to be called on result  </li>
+</ul>
+<p><a name="RPC#_request"></a></p>
+<h2 id="rPC-_request(request,_callbak)">rPC._request(request, callbak)</h2>
+<p>Internal function to make an RPC call</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>request <code>Object</code> - Object to be serialized and sent to bitcoind  </li>
+<li>callbak <code>function</code> - Function to be called on result  </li>
+</ul>
+
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2015-02-12T13:50:43.000Z" itemprop="dateModified">Last updated: Feb 12 2015</time>
+        <time id="page-footer-updated" datetime="2014-12-23T20:28:59.000Z" itemprop="dateModified">Last updated: Dec 23 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
