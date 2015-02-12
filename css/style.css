@@ -353,13 +353,27 @@ body {
   background-position: 0 -25px;
 }
 .main-nav-link.forum:hover {
-  background-position: 0 -22px;
+  background-position: 0 -29px;
+}
+.main-nav-link.playground:hover {
+  background-position: 0 -26px;
+}
+.main-nav-link.playground {
+  background-image: url("images/playground-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 8px;
+  padding-left: 25px;
+}
+@media (max-width: 768px) {
+  .main-nav-link.playground {
+    background-image: none;
+  }
 }
 .main-nav-link.forum {
-  background-image: url("images/lab-icon.svg");
+  background-image: url("images/doc-icon1.svg");
   background-repeat: no-repeat;
-  background-position: 0 7px;
-  padding-left: 20px;
+  background-position: 0 5px;
+  padding-left: 25px;
 }
 @media (max-width: 768px) {
   .main-nav-link.forum {
@@ -1038,7 +1052,7 @@ a.post-title:hover {
 }
 #ball {
   position: absolute;
-  top: 10px;
+  top: 30px;
   height: 160px;
   width: 169px;
   background-repeat: no-repeat;
@@ -1151,8 +1165,15 @@ a.post-title:hover {
     background-image: none;
   }
 }
+p.getting-started {
+  color: #fff;
+  line-height: 20px;
+}
 #getting-started a {
-  color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+  padding-bottom: 1px;
 }
 #getting-started {
   clear: both;
@@ -1394,6 +1415,50 @@ a.post-title:hover {
     background-position: 0 -33px;
   }
 }
+#pheeva-link {
+  width: 120px;
+  background-image: url("images/pheeva-link.svg");
+  height: 32px;
+}
+@media (max-width: 328px) {
+  #pheeva-link {
+    width: 70px;
+    -webkit-background-size: 70px;
+    -moz-background-size: 70px;
+    background-size: 70px;
+    height: 30px;
+  }
+}
+#pheeva-link:hover {
+  background-position: 0 -60px;
+}
+@media (max-width: 328px) {
+  #pheeva-link:hover {
+    background-position: 0 -35px;
+  }
+}
+#counterparty-link-complete {
+  width: 108px;
+  background-image: url("images/cp-link-complete.svg");
+  height: 32px;
+}
+@media (max-width: 328px) {
+  #counterparty-link-complete {
+    width: 70px;
+    -webkit-background-size: 70px;
+    -moz-background-size: 70px;
+    background-size: 70px;
+    height: 30px;
+  }
+}
+#counterparty-link-complete:hover {
+  background-position: 0 -60px;
+}
+@media (max-width: 328px) {
+  #counterparty-link-complete:hover {
+    background-position: 0 -35px;
+  }
+}
 .using-bitcore {
   text-align: center;
   clear: both;
@@ -1534,6 +1599,27 @@ a.post-title:hover {
 }
 @media (max-width: 480px) {
   #read-api {
+    -webkit-background-size: 65px 68px;
+    -moz-background-size: 65px 68px;
+    background-size: 65px 68px;
+    width: 65px;
+    height: 68px;
+  }
+}
+#play-ground {
+  background-image: url("images/playground-illustration.png");
+  -webkit-background-size: 168px 88px;
+  -moz-background-size: 168px 88px;
+  background-size: 168px 88px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  width: 168px;
+  height: 88px;
+}
+@media (max-width: 480px) {
+  #play-ground {
     -webkit-background-size: 65px 68px;
     -moz-background-size: 65px 68px;
     background-size: 65px 68px;
@@ -1718,7 +1804,7 @@ a.post-title:hover {
 }
 #banner-title {
   position: relative;
-  top: -30px;
+  top: -20px;
   color: #fff;
   font: 300 38px "Ubuntu", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 1px 0 #000;
