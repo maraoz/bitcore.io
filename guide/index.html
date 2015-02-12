@@ -71,15 +71,15 @@
             </li>
           
             <li class="main-nav-item">
-              <a href="/api/" class="main-nav-link api">API</a>
-            </li>
-          
-            <li class="main-nav-item">
               <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
             </li>
           
             <li class="main-nav-item">
-              <a href="http://bitpaylabs.com" class="main-nav-link forum">Forum</a>
+              <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
             </li>
           
         </ul>
@@ -104,10 +104,10 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bitcore_v0-9"><span class="toc-number">1.</span> <span class="toc-text">Bitcore v0.9</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Principles"><span class="toc-number">1.1.</span> <span class="toc-text">Principles</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Documentation_Index"><span class="toc-number">2.</span> <span class="toc-text">Documentation Index</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Addresses_and_Key_Management"><span class="toc-number">2.1.</span> <span class="toc-text">Addresses and Key Management</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Payment_Handling"><span class="toc-number">2.2.</span> <span class="toc-text">Payment Handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bitcoin_Internals"><span class="toc-number">2.3.</span> <span class="toc-text">Bitcoin Internals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-number">2.4.</span> <span class="toc-text">Extra</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Module_Development"><span class="toc-number">2.5.</span> <span class="toc-text">Module Development</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules"><span class="toc-number">2.6.</span> <span class="toc-text">Modules</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Examples"><span class="toc-number">3.</span> <span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_and_Save_a_Private_Key"><span class="toc-number">3.1.</span> <span class="toc-text">Create and Save a Private Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_an_Address"><span class="toc-number">3.2.</span> <span class="toc-text">Create an Address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Multisig_Address"><span class="toc-number">3.3.</span> <span class="toc-text">Create a Multisig Address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Request_a_Payment"><span class="toc-number">3.4.</span> <span class="toc-text">Request a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Transaction"><span class="toc-number">3.5.</span> <span class="toc-text">Create a Transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect_to_the_Network"><span class="toc-number">3.6.</span> <span class="toc-text">Connect to the Network</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bitcore_v0-10"><span class="toc-number">1.</span> <span class="toc-text">Bitcore v0.10</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Principles"><span class="toc-number">1.1.</span> <span class="toc-text">Principles</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Documentation_Index"><span class="toc-number">2.</span> <span class="toc-text">Documentation Index</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Addresses_and_Key_Management"><span class="toc-number">2.1.</span> <span class="toc-text">Addresses and Key Management</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Payment_Handling"><span class="toc-number">2.2.</span> <span class="toc-text">Payment Handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bitcoin_Internals"><span class="toc-number">2.3.</span> <span class="toc-text">Bitcoin Internals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-number">2.4.</span> <span class="toc-text">Extra</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Module_Development"><span class="toc-number">2.5.</span> <span class="toc-text">Module Development</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules"><span class="toc-number">2.6.</span> <span class="toc-text">Modules</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Examples"><span class="toc-number">3.</span> <span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_and_Save_a_Private_Key"><span class="toc-number">3.1.</span> <span class="toc-text">Create and Save a Private Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_an_Address"><span class="toc-number">3.2.</span> <span class="toc-text">Create an Address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Multisig_Address"><span class="toc-number">3.3.</span> <span class="toc-text">Create a Multisig Address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Request_a_Payment"><span class="toc-number">3.4.</span> <span class="toc-text">Request a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Transaction"><span class="toc-number">3.5.</span> <span class="toc-text">Create a Transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect_to_the_Network"><span class="toc-number">3.6.</span> <span class="toc-text">Connect to the Network</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <h1 id="Bitcore_v0-9">Bitcore v0.9</h1>
+        <h1 id="Bitcore_v0-10">Bitcore v0.10</h1>
 <h2 id="Principles">Principles</h2>
 <p>Bitcoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Bitcoin network allows for highly resilient bitcoin infrastructure, and the developer community needs reliable, open-source tools to implement bitcoin apps and services. Bitcore provides a reliable API for javascript apps that need to interface with Bitcoin.</p>
 <p>To get started, just <code>npm install bitcore</code> or <code>bower install bitcore</code>.</p>
@@ -173,7 +173,7 @@
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2015-02-11T23:41:32.000Z" itemprop="dateModified">Last updated: Feb 11 2015</time>
+        <time id="page-footer-updated" datetime="2015-02-12T13:50:40.000Z" itemprop="dateModified">Last updated: Feb 12 2015</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
